@@ -8,7 +8,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses ({
 	TestLifeForm.class,
-	TestCell.class
+	TestCell.class,
+	TestEnvironment.class
 })
 public class AllGameTests 
 {

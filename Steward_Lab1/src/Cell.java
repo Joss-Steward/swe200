@@ -3,14 +3,14 @@
  */
 public class Cell
 {
-	LifeForm lifeForm;
+	LifeForm entity;
 	
    /**
     * @return the LifeForm in this Cell.
     */
    public LifeForm getLifeForm()
    {
-      return lifeForm;
+      return entity;
    }
    
    /**
@@ -20,12 +20,23 @@ public class Cell
     */
    public boolean addLifeForm(LifeForm entity)
    {
-	   if(lifeForm == null)
+	   if(this.entity == null)
 	   {
-		   lifeForm = entity;
+		   this.entity = entity;
 		   return true;
 	   } else {
 		   return false;
 	   }
    }   
+   
+   /**
+    * Removes the current LifeForm from the cell
+    * @returns the removed LifeForm, if any. Null otherwise.
+    */
+   public LifeForm removeLifeForm()
+   {
+	   LifeForm temp = entity;
+	   entity = null;
+	   return temp;
+   }
 }
