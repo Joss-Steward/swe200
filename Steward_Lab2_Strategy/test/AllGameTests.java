@@ -1,4 +1,5 @@
 import lifeForm.TestLifeForm;
+import lifeForm.TestHuman;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -14,7 +15,8 @@ import environment.TestEnvironment;
 @Suite.SuiteClasses ({
 	TestLifeForm.class,
 	TestCell.class,
-	TestEnvironment.class
+	TestEnvironment.class,
+	TestHuman.class
 })
 public class AllGameTests 
 {
