@@ -4,6 +4,7 @@ import org.junit.Test;
 
 /**
  * The test cases for the Cell class
+ * @author Merlin, Joss Steward
  */
 public class TestCell
 {

@@ -2,9 +2,15 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-
-public class TestEnvironment {
-
+/**
+ * The test cases for the Environment class
+ * @author Merlin, Joss Steward
+ */
+public class TestEnvironment 
+{
+	/**
+	 * Test a simple environment with a single cell
+	 */	
 	@Test
 	public void testSingleCellEnvironment() 
 	{
@@ -12,6 +18,9 @@ public class TestEnvironment {
 		assertNull(e.getLifeForm(0,0));
 	}
 	
+	/**
+	 * Test storing a LifeForm in a single cell in a small array.
+	 */
 	@Test
 	public void testStorageAbility()
 	{
@@ -23,6 +32,9 @@ public class TestEnvironment {
 		assertEquals(bobo, e.getLifeForm(1, 2));
 	}
 	
+	/**
+	 * Test Adding a LifeForm and then removing it.
+	 */
 	@Test
 	public void testRemovingLifeForm()
 	{
@@ -37,6 +49,9 @@ public class TestEnvironment {
 		assertNull(e.getLifeForm(1, 2));		
 	}
 	
+	/**
+	 * Test some of the edge cases.
+	 */
 	@Test
 	public void testEdgeCases()
 	{
@@ -48,17 +63,24 @@ public class TestEnvironment {
 		assertTrue(success);		
 		assertEquals(bobo, e.getLifeForm(0, 0));
 		
-		// Test adding a LifeForm at the farthest column
+		// Test adding a LifeForm at the farthest row
 		LifeForm billy = new LifeForm("billy", 60);		
 		success = e.addLifeForm(0, 499, billy);
 		assertTrue(success);		
 		assertEquals(billy, e.getLifeForm(0, 499));
 
-		// Test adding a LifeForm at the farthest row
+		// Test adding a LifeForm at the farthest column
 		LifeForm jo = new LifeForm("jo", 60);		
-		success = e.addLifeForm(0, 499, billy);
+		success = e.addLifeForm(499, 0, jo);
 		assertTrue(success);		
-		assertEquals(billy, e.getLifeForm(0, 499));
+		assertEquals(jo, e.getLifeForm(499, 0));
+
+		// Test adding a LifeForm at the farthest cell
+		LifeForm john = new LifeForm("john", 60);		
+		success = e.addLifeForm(499, 499, john);
+		assertTrue(success);		
+		assertEquals(john, e.getLifeForm(499, 499));
+		
 	}
 
 }

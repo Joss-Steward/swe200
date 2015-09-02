@@ -1,7 +1,8 @@
 /**
  * Keeps track of the information associated with a simple life form.
  * Also provides the functionality related to the life form.
- * @author js0289
+ * Code sourced from Textbook
+ * @author Joss Steward
  */
 public class LifeForm {
 	private String myName;

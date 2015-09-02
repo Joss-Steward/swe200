@@ -1,8 +1,8 @@
-
 /**
  * Represents the game world.
  * Holds a two-dimensional array of cells.
- * @author js0289
+ * Code sourced from Textbook
+ * @author Joss Steward
  */
 public class Environment {
 	private int rows;
@@ -15,6 +15,7 @@ public class Environment {
 		
 		theCells = new Cell[rows][cols];
 		
+		/* Fill the array with empty cells */
 		for(int x = 0; x < rows; x++){
 			for(int y = 0; y < cols; y++){
 				theCells[x][y] = new Cell();

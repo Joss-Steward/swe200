@@ -1,5 +1,7 @@
 /**
  * A Cell that can hold a LifeForm.
+ * Code sourced from Textbook
+ * @author Joss Steward
  */
 public class Cell
 {

@@ -5,7 +5,7 @@ import org.junit.Test;
 /**
  * Tests the functionality provided by the LifeForm class
  * Copied from the book
- * @author js0289
+ * @author Merlin, Joss Steward
  */
 public class TestLifeForm {
 
