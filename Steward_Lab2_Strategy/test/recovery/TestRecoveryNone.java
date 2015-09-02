@@ -15,7 +15,7 @@ public class TestRecoveryNone {
 	@Test
 	public void testAtMaxHealth() {
 		RecoveryNone nope = new RecoveryNone();
-		assertEquals(0, nope.calculateRecovery(100, 100));
+		assertEquals(100, nope.calculateRecovery(100, 100));
 	}
 	
 	/**
@@ -24,6 +24,6 @@ public class TestRecoveryNone {
 	@Test
 	public void testAtWhenHurt() {
 		RecoveryNone nope = new RecoveryNone();
-		assertEquals(0, nope.calculateRecovery(10, 100));
+		assertEquals(10, nope.calculateRecovery(10, 100));
 	}
 }

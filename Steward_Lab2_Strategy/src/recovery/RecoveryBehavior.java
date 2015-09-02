@@ -6,10 +6,10 @@ package recovery;
  */
 public interface RecoveryBehavior {
 	/**
-	 * Returns the amount of LifePoints to recover.
+	 * Returns the new amount of LifePoints (after recovering health).
 	 * @param currentLife The current LifePoints of the Alien
 	 * @param maxLife The maximum LifePoints of the Alien
-	 * @return The amount of LifePoints to recover
+	 * @return The new amount of LifePoints
 	 */
 	public int calculateRecovery(int currentLife, int maxLife);
 }

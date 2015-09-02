@@ -14,7 +14,7 @@ public class RecoveryNone implements RecoveryBehavior {
 	 */
 	@Override
 	public int calculateRecovery(int currentLife, int maxLife) {
-		return 0;
+		return currentLife;
 	}
 
 }

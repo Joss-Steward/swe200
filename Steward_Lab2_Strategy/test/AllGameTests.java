@@ -8,9 +8,12 @@ import org.junit.runners.Suite;
 import environment.TestCell;
 import environment.TestEnvironment;
 
+import recovery.TestRecoveryNone;
+import recovery.TestRecoveryLinear;
+
 /**
  * Runs all of the tests in this project
- * @author js0289
+ * @author Joss Steward
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses ({
@@ -18,7 +21,9 @@ import environment.TestEnvironment;
 	TestCell.class,
 	TestEnvironment.class,
 	TestHuman.class,
-	TestAlien.class
+	TestAlien.class,
+	TestRecoveryNone.class,
+	TestRecoveryLinear.class
 })
 public class AllGameTests 
 {
