@@ -32,4 +32,14 @@ public abstract class LifeForm {
 	public int getCurrentLifePoints(){
 		return currentLifePoints;
 	}
+	
+	/**
+	 * Subtracts @damage points from the currentLifePoints.
+	 * @param damage The number of points of damage done.
+	 * @return void
+	 */
+	public void takeHit(int damage)
+	{
+		currentLifePoints = Math.max(0, currentLifePoints - damage);
+	}
 }
