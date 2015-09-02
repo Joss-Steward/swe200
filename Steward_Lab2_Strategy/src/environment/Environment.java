@@ -1,3 +1,6 @@
+package environment;
+
+import lifeForm.LifeForm;
 
 /**
  * Represents the game world.
