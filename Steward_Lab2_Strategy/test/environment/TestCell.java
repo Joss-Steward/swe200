@@ -1,6 +1,6 @@
 package environment;
 import static org.junit.Assert.*;
-import lifeForm.LifeForm;
+import lifeForm.MockLifeForm;
 
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ import org.junit.Test;
 public class TestCell
 {
    /**
-    * At initialization, the CEll should be empty and not contain a LifeForm.
+    * At initialization, the CEll should be empty and not contain a MockLifeForm.
     */
    @Test
    public void testInitialization()
@@ -21,14 +21,14 @@ public class TestCell
    }
    
    /**
-    * Checks to see if we change the LifeForm held by the Cell that
-    * getLifeForm properly responds to this change.
+    * Checks to see if we change the MockLifeForm held by the Cell that
+    * getMockLifeForm properly responds to this change.
     */
    @Test
-   public void testSetLifeForm()
+   public void testSetMockLifeForm()
    {
-	   LifeForm bob = new LifeForm("Bob", 40);
-	   LifeForm fred = new LifeForm("Fred", 40);
+	   MockLifeForm bob = new MockLifeForm("Bob", 40);
+	   MockLifeForm fred = new MockLifeForm("Fred", 40);
 	   Cell cell = new Cell();
 	   
 	   //The cell is empty right now, so this will work
@@ -43,12 +43,12 @@ public class TestCell
    }
    
    /**
-    * Checks to see that we can remove a LifeForm without a issue
+    * Checks to see that we can remove a MockLifeForm without a issue
     */
    @Test
-   public void testRemoveLifeForm()
+   public void testRemoveMockLifeForm()
    {
-	   LifeForm bob = new LifeForm("Bob", 40);
+	   MockLifeForm bob = new MockLifeForm("Bob", 40);
 	   Cell cell = new Cell();	   
 
 	   //The cell is empty right now, so this will work
@@ -56,11 +56,11 @@ public class TestCell
 	   assertTrue(success);
 	   assertEquals(bob, cell.getLifeForm());
 	   
-	   //Now try removing the LifeForm
+	   //Now try removing the MockLifeForm
 	   assertEquals(bob, cell.removeLifeForm());
 	   assertNull(cell.getLifeForm());
 
-	   //Now try adding the LifeForm back again
+	   //Now try adding the MockLifeForm back again
 	   success = cell.addLifeForm(bob);
 	   assertTrue(success);
 	   assertEquals(bob, cell.getLifeForm());

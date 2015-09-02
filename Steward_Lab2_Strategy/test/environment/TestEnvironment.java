@@ -1,6 +1,6 @@
 package environment;
 import static org.junit.Assert.*;
-import lifeForm.LifeForm;
+import lifeForm.MockLifeForm;
 
 import org.junit.Test;
 
@@ -21,13 +21,13 @@ public class TestEnvironment
 	}
 	
 	/**
-	 * Test storing a LifeForm in a single cell in a small array.
+	 * Test storing a MockMockLifeForm in a single cell in a small array.
 	 */
 	@Test
 	public void testStorageAbility()
 	{
 		Environment e = new Environment(2, 3);	
-		LifeForm bobo = new LifeForm("bobo", 40);
+		MockLifeForm bobo = new MockLifeForm("bobo", 40);
 		boolean success = e.addLifeForm(1, 2, bobo);
 		assertTrue(success);
 		
@@ -35,13 +35,13 @@ public class TestEnvironment
 	}
 	
 	/**
-	 * Test Adding a LifeForm and then removing it.
+	 * Test Adding a MockMockLifeForm and then removing it.
 	 */
 	@Test
 	public void testRemovingLifeForm()
 	{
 		Environment e = new Environment(2, 3);	
-		LifeForm bobo = new LifeForm("bobo", 40);
+		MockLifeForm bobo = new MockLifeForm("bobo", 40);
 		boolean success = e.addLifeForm(1, 2, bobo);
 		assertTrue(success);
 		
@@ -59,26 +59,26 @@ public class TestEnvironment
 	{
 		Environment e = new Environment(500, 500);	
 		
-		// Test adding a LifeForm at (0, 0)
-		LifeForm bobo = new LifeForm("bobo", 40);		
+		// Test adding a MockMockLifeForm at (0, 0)
+		MockLifeForm bobo = new MockLifeForm("bobo", 40);		
 		boolean success = e.addLifeForm(0, 0, bobo);
 		assertTrue(success);		
 		assertEquals(bobo, e.getLifeForm(0, 0));
 		
-		// Test adding a LifeForm at the farthest row
-		LifeForm billy = new LifeForm("billy", 60);		
+		// Test adding a MockMockLifeForm at the farthest row
+		MockLifeForm billy = new MockLifeForm("billy", 60);		
 		success = e.addLifeForm(0, 499, billy);
 		assertTrue(success);		
 		assertEquals(billy, e.getLifeForm(0, 499));
 
-		// Test adding a LifeForm at the farthest column
-		LifeForm jo = new LifeForm("jo", 60);		
+		// Test adding a MockMockLifeForm at the farthest column
+		MockLifeForm jo = new MockLifeForm("jo", 60);		
 		success = e.addLifeForm(499, 0, jo);
 		assertTrue(success);		
 		assertEquals(jo, e.getLifeForm(499, 0));
 
-		// Test adding a LifeForm at the farthest cell
-		LifeForm john = new LifeForm("john", 60);		
+		// Test adding a MockMockLifeForm at the farthest cell
+		MockLifeForm john = new MockLifeForm("john", 60);		
 		success = e.addLifeForm(499, 499, john);
 		assertTrue(success);		
 		assertEquals(john, e.getLifeForm(499, 499));

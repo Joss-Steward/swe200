@@ -5,7 +5,7 @@ package lifeForm;
  * Code sourced from Textbook
  * @author Joss Steward
  */
-public class LifeForm {
+public abstract class LifeForm {
 	private String myName;
 	private int currentLifePoints;
 	

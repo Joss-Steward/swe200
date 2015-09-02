@@ -17,7 +17,7 @@ public class TestLifeForm {
 	@Test
 	public void testInitialization() {
 		LifeForm entity;
-		entity = new LifeForm("Bob", 40);
+		entity = new MockLifeForm("Bob", 40);
 		assertEquals("Bob", entity.getName());
 		assertEquals(40, entity.getCurrentLifePoints());
 	}
