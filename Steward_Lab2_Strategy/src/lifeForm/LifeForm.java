@@ -7,7 +7,7 @@ package lifeForm;
  */
 public abstract class LifeForm {
 	private String myName;
-	protected int currentLifePoints;
+	private int currentLifePoints;
 	
 	/**
 	 * Create an instance
@@ -41,5 +41,14 @@ public abstract class LifeForm {
 	public void takeHit(int damage)
 	{
 		currentLifePoints = Math.max(0, currentLifePoints - damage);
+	}	
+
+	/**
+	 * Sets the current life points to the passed value.
+	 * Contains no error checking, so be careful.
+	 * @param life
+	 */
+	protected void setCurrentLifePoints(int life) {
+		currentLifePoints = life;
 	}
 }

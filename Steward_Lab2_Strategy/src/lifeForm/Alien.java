@@ -35,14 +35,14 @@ public class Alien extends LifeForm {
 		recoveryBehavior = rb;
 	}
 	
+	/**
+	 * Regenerates health.
+	 * How much health is regained is dependent upon the 
+	 * recoveryBehavior this instance was created with.
+	 */
 	public void recover() {
-		int newLifePoints = 
-				recoveryBehavior.calculateRecovery(currentLifePoints, maxLifePoints);
-		
+		int newLifePoints = recoveryBehavior
+				.calculateRecovery(getCurrentLifePoints(), maxLifePoints);		
 		setCurrentLifePoints(newLifePoints);
-	}
-	
-	private void setCurrentLifePoints(int life) {
-		currentLifePoints = life;
 	}
 }
