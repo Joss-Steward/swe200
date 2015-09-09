@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import recovery.RecoveryLinear;
+
 /**
  * Contains tests for the Alien class
  * @author Joss Steward
@@ -19,5 +21,19 @@ public class TestAlien {
 				
 		assertEquals("njeklwqfeasf", njeklwqfeasf.getName());
 		assertEquals(50, njeklwqfeasf.getCurrentLifePoints());
+	}
+	
+	/**
+	 * Test an Alien with a simple linear recovery behavior
+	 */
+	@Test
+	public void testAlienWithLinearRecovery() {
+		RecoveryLinear linearRecovery = new RecoveryLinear(10);
+		Alien lnar = new Alien("lnar", 50, linearRecovery);
+		
+		lnar.takeHit(20);
+		assertEquals(30, lnar.getCurrentLifePoints());
+		lnar.recover();
+		assertEquals(40, lnar.getCurrentLifePoints());
 	}
 }
