@@ -33,6 +33,8 @@ public class TestAlien {
 		
 		lnar.takeHit(20);
 		assertEquals(30, lnar.getCurrentLifePoints());
+		
+		// With linear recovery lnar should end up with 40 life points
 		lnar.recover();
 		assertEquals(40, lnar.getCurrentLifePoints());
 	}
