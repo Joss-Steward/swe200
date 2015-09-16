@@ -29,6 +29,19 @@ public class Human extends LifeForm {
 	}
 	
 	/**
+	 * Override the default takeHit behavior
+	 * Now, damage is absorbed first by the armor, and only then
+	 * does it hurt the human.
+	 * @param damage The number of points of damage done (before armor).
+	 * @return void
+	 */
+	public void takeHit(int damage)
+	{
+		int effectiveDamage = Math.max(0, damage - armorPoints);
+		super.takeHit(effectiveDamage);
+	}	
+	
+	/**
 	 * @return The current number of ArmorPoints this human has
 	 */
 	public int getArmorPoints() {

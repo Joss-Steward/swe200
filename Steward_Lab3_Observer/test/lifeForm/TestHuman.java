@@ -21,6 +21,63 @@ public class TestHuman {
 		Human susan = new Human("Susan", 10, 50);		
 		assertEquals(5, susan.getAttackStrength());
 	}
+	
+	/**
+	 * Test the Armor's hit-absorbing ability
+	 * This test checks when the armor can only absorb
+	 * some of the damage
+	 */
+	@Test
+	public void testArmorAbsorbSomeDamage(){
+		// Create a new Human named Susan with 10 HP, 
+		//  50 Armor, and the default attack strength		
+		Human susan = new Human("Susan", 10, 50);
+		
+		susan.takeHit(55);
+		assertEquals(5, susan.getCurrentLifePoints());
+		
+		// Make sure the armor wasn't damaged
+		assertEquals(50, susan.getArmorPoints());		
+	}
+	
+	/**
+	 * Test the Armor's hit-absorbing ability
+	 * This test checks when the armor can only absorb
+	 * all of the damage
+	 */
+	@Test
+	public void testArmorAbsorbAllDamage(){
+		// Create a new Human named Susan with 10 HP, 
+		//  50 Armor, and the default attack strength		
+		Human susan = new Human("Susan", 10, 50);
+		
+		susan.takeHit(5);
+		assertEquals(10, susan.getCurrentLifePoints());
+		
+		// Make sure the armor wasn't damaged
+		assertEquals(50, susan.getArmorPoints());		
+	}
+	
+	/**
+	 * Test the Armor's hit-absorbing ability
+	 * This test checks that the armor doesn't degrade
+	 */
+	@Test
+	public void testArmorNoDegrade(){
+		// Create a new Human named Susan with 10 HP, 
+		//  50 Armor, and the default attack strength		
+		Human susan = new Human("Susan", 10, 50);
+		
+		// Hit repeatedly
+		for(int i = 0; i < 10; i++) {
+			susan.takeHit(45);
+		}
+		
+		assertEquals(10, susan.getCurrentLifePoints());
+		
+		// Make sure the armor wasn't damaged
+		assertEquals(50, susan.getArmorPoints());		
+	}
 
 	/***************************
 	 * TESTS FROM STRATEGY LAB *
