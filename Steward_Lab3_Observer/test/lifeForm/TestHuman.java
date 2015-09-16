@@ -10,6 +10,21 @@ import org.junit.Test;
  * @author Joss Steward
  */
 public class TestHuman {
+	
+	/**
+	 * Test the default attack strength
+	 */
+	@Test
+	public void testDefaultAttackStrength(){
+		// Create a new Human named Susan with 10 HP, 
+		//  50 Armor, and the default attack strength		
+		Human susan = new Human("Susan", 10, 50);		
+		assertEquals(5, susan.getAttackStrength());
+	}
+
+	/***************************
+	 * TESTS FROM STRATEGY LAB *
+	 ***************************/
 
 	/**
 	 * Test the constructor of the Human class

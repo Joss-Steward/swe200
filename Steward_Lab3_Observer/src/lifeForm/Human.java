@@ -16,13 +16,15 @@ public class Human extends LifeForm {
 	 * 
 	 * If armorPoints is negative, this will set the armorPoints to 0.
 	 * 
+	 * Default attack strength of 5
+	 * 
 	 * @param name The Name of the new Human
 	 * @param lifePoints The initial LifePoints of the new Human
 	 * @param armorPoints The initial ArmorPoints of the new Human
 	 */
 	public Human(String name, int lifePoints, int armorPoints) 
 	{
-		super(name, lifePoints);
+		super(name, lifePoints, 5);
 		this.armorPoints = Math.max(0, armorPoints);		
 	}
 	
