@@ -45,4 +45,21 @@ public class TestLifeForm {
 		entity.takeHit(50);	
 		assertEquals(0, entity.getCurrentLifePoints());
 	}
+	
+	/**
+	 * Test takeHit when the LifeForm has no health
+	 */
+	@Test
+	public void testTakeHitAtNoHealth(){
+		LifeForm entity = new MockLifeForm("Bob", 0);
+		
+		// Make sure the initial hit points is correct
+		assertEquals(0, entity.getCurrentLifePoints());
+		
+		// Do 50 points of damage
+		entity.takeHit(50);	
+		// Make sure he's still dead
+		assertEquals(0, entity.getCurrentLifePoints());
+	}
+	
 }
