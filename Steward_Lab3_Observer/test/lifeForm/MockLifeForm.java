@@ -14,5 +14,15 @@ public class MockLifeForm extends LifeForm {
 	public MockLifeForm(String name, int points) {
 		super(name, points);
 	}
+	
+	/**
+	 * This Constructor will just call the constructor in LifeForm
+	 * @param name - The name of the new LifeForm
+	 * @param points - The Initial Hit points of the new LifeForm
+	 * @param strength - The initial attack strength of the new LifeForm
+	 */
+	public MockLifeForm(String name, int points, int strength) {
+		super(name, points, strength);
+	}
 
 }

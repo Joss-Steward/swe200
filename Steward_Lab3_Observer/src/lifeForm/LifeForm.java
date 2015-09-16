@@ -8,15 +8,34 @@ package lifeForm;
 public abstract class LifeForm {
 	private String myName;
 	private int currentLifePoints;
+	private int attackStrength;
+
+	/**
+	 * Create an instance with the default attack strength (5)
+	 * @param name The name of the life form.
+	 * @param points The current starting life points of the life form. 
+	 */
+	public LifeForm(String name, int points) {
+		this(name, points, 5);
+	}
 	
 	/**
 	 * Create an instance
 	 * @param name The name of the life form.
 	 * @param points The current starting life points of the life form.
+	 * @param strength The starting attack strength of this LifeForm
 	 */
-	public LifeForm(String name, int points) {
+	public LifeForm(String name, int points, int strength) {
 		myName = name;
 		currentLifePoints = points;
+		attackStrength = strength;
+	}
+	
+	/**
+	 * @return The attack strength of this LifeForm
+	 */
+	public int getAttackStrength(){
+		return attackStrength;
 	}
 	
 	/**

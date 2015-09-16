@@ -11,6 +11,30 @@ import org.junit.Test;
 public class TestLifeForm {
 
 	/**
+	 * Make sure the LifeForm knows how strong its attack is
+	 */
+	@Test
+	public void testDefaultAttackStrength() {
+		// The default attack strength will be 5
+		LifeForm entity = new MockLifeForm("Bob", 40);
+		assertEquals(5, entity.getAttackStrength());		
+	}
+
+	/**
+	 * Make sure the LifeForm knows how strong its attack is
+	 */
+	@Test
+	public void testCustomAttackStrength() {
+		// The attack strength will be 10
+		LifeForm entity = new MockLifeForm("Bob", 40, 10);
+		assertEquals(10, entity.getAttackStrength());		
+	}
+	
+	/***************************
+	 * TESTS FROM STRATEGY LAB *
+	 ***************************/
+	
+	/**
 	 * When a LifeForm is created, it should know its name and
 	 * how many life points it has.
 	 */
