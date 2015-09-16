@@ -30,6 +30,42 @@ public class TestLifeForm {
 		assertEquals(10, entity.getAttackStrength());		
 	}
 	
+	/**
+	 * Check that a LifeForm can attack another LifeForm
+	 * When will the violence end? :(
+	 */
+	@Test
+	public void testAttackAbility(){
+		// The attack strength will be 10
+		LifeForm attacker = new MockLifeForm("Bob", 40, 10);
+		assertEquals(10, attacker.getAttackStrength());
+		
+		LifeForm victim = new MockLifeForm("Grabzorknork", 50);
+		assertEquals(50, victim.getCurrentLifePoints());
+		
+		attacker.attack(victim);
+		assertEquals(40, victim.getCurrentLifePoints());
+	}
+	
+	/**
+	 * Dead things can't hurt living things... yet
+	 */
+	@Test
+	public void testAttackWhenDead(){
+		// The attack strength will be 10
+		LifeForm attacker = new MockLifeForm("Bob", 0, 10);
+		assertEquals(10, attacker.getAttackStrength());
+		
+		LifeForm victim = new MockLifeForm("Grabzorknork", 50);
+		assertEquals(50, victim.getCurrentLifePoints());
+		
+		// Because Bob is dead, he can't hurt Grabzorknork
+		attacker.attack(victim);
+		assertEquals(50, victim.getCurrentLifePoints());
+		
+	}
+
+	
 	/***************************
 	 * TESTS FROM STRATEGY LAB *
 	 ***************************/

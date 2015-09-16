@@ -39,6 +39,14 @@ public abstract class LifeForm {
 	}
 	
 	/**
+	 * Attack something
+	 */
+	public void attack(LifeForm target){
+		if(currentLifePoints > 0)
+			target.takeHit(attackStrength);
+	}
+	
+	/**
 	 * @return The name of the life form.
 	 */
 	public String getName(){
