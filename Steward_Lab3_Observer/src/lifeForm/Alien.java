@@ -25,12 +25,15 @@ public class Alien extends LifeForm {
 	 * This is a more complete version of the Alien constructor.
 	 * The recovery behavior passed to this will be the manner in
 	 * which this alien recovers health.
+	 * 
+	 * The default attack strength of all aliens is 10... for now
+	 * 
 	 * @param name The name of this particular alien.
 	 * @param points The initial life points of this alien.
 	 * @param rb The recovery behavior of this alien.
 	 */
 	public Alien(String name, int points, RecoveryBehavior rb) {
-		super(name, points);
+		super(name, points, 10);
 		maxLifePoints = points;
 		recoveryBehavior = rb;
 	}

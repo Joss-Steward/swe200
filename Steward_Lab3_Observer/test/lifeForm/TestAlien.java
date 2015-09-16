@@ -11,6 +11,23 @@ import recovery.RecoveryLinear;
  * @author Joss Steward
  */
 public class TestAlien {
+	
+	/**
+	 * Test the default attack strength for aliens
+	 */
+	@Test
+	public void testDefaultAttack(){
+		// Aliens are weird
+		// Not specifying the attack strength because I just
+		// 	want to stick with the default
+		Alien grebzorilian = new Alien("Grebzori'lian", 50);
+		assertEquals(10, grebzorilian.getAttackStrength());
+	}
+
+	/***************************
+	 * TESTS FROM STRATEGY LAB *
+	 ***************************/
+	
 	/**
 	 * Test the simple constructor for Alien
 	 */
