@@ -79,6 +79,35 @@ public class TestHuman {
 		assertEquals(50, susan.getArmorPoints());		
 	}
 
+	/**
+	 * Test the Armor's hit-absorbing ability
+	 * This test checks a border case
+	 */
+	@Test
+	public void testArmorAtZero(){
+		// Create a new Human named Susan with 10 HP, 
+		//  0 Armor, and the default attack strength		
+		Human susan = new Human("Susan", 10, 0);
+		
+		susan.takeHit(5);		
+		assertEquals(5, susan.getCurrentLifePoints());
+	}
+
+	/**
+	 * Test the Armor's hit-absorbing ability
+	 * This test checks a border case
+	 */
+	@Test
+	public void testArmorAtMaxCapability(){
+		// Create a new Human named Susan with 10 HP, 
+		//  0 Armor, and the default attack strength		
+		Human susan = new Human("Susan", 10, 10);
+		
+		// The armor should absorb all of this damage
+		susan.takeHit(10);		
+		assertEquals(10, susan.getCurrentLifePoints());
+	}
+	
 	/***************************
 	 * TESTS FROM STRATEGY LAB *
 	 ***************************/
