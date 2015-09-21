@@ -24,6 +24,23 @@ class MockSimpleTimerObserver implements TimeObserver
  */
 public class TestSimpleTimer {
 	
+	/**
+	 * This tests that SimpleTimer will update time once every second.
+	 */
+	@Test
+	public void testSimpleTimerAsThread() throws InterruptedException
+	{
+		SimpleTimer st = new SimpleTimer(1000);
+		st.start();
+		Thread.sleep(250);
+		
+		for(int x = 0; x < 5; x++)
+		{
+			assertEquals(x, st.getTime());
+			Thread.sleep(1000);
+		}
+	}
+	
 	/** 
 	 * Test that we can create a simple timer
 	 */

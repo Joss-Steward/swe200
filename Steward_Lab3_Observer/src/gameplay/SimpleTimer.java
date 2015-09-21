@@ -8,10 +8,16 @@ import java.util.ArrayList;
 public class SimpleTimer extends Thread implements Timer {
 	private ArrayList<TimeObserver> Observers;
 	private int time;
+	private int delay;
 	
 	public SimpleTimer(){
 		Observers = new ArrayList<TimeObserver>();
 		time = 0;
+	}
+	
+	public SimpleTimer(int delay){
+		this();
+		this.delay = delay;
 	}
 	
 	/**
@@ -23,7 +29,7 @@ public class SimpleTimer extends Thread implements Timer {
 		for(int i = 0; i < 100; i++){
 			try
 			{
-				Thread.sleep(1000);
+				Thread.sleep(delay);
 				this.timeChanged();
 			} catch (InterruptedException e) {
 				System.out.println("Oh god! Oh god! Everything is on fire! Help!");
