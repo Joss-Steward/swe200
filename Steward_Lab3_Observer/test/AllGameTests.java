@@ -7,7 +7,7 @@ import org.junit.runners.Suite;
 
 import environment.TestCell;
 import environment.TestEnvironment;
-
+import gameplay.TestSimpleTimer;
 import recovery.TestRecoveryNone;
 import recovery.TestRecoveryLinear;
 import recovery.TestRecoveryFractional;
@@ -25,7 +25,8 @@ import recovery.TestRecoveryFractional;
 	TestAlien.class,
 	TestRecoveryNone.class,
 	TestRecoveryLinear.class,
-	TestRecoveryFractional.class
+	TestRecoveryFractional.class,
+	TestSimpleTimer.class
 })
 public class AllGameTests 
 {
